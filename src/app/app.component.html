@@ -1,0 +1,23 @@
+<!-- <p *ngIf="isVisible">{{title}} </p> aggiungo nel punto che voglio il contenuto della variabile title
+<p *ngFor="let item of listaNomi" >{{item}}</p>
+<button class="btn btn-primary" (click) = "cambiaTitolo()">Cambia titolo</button>
+<button class="btn btn-primary" (click) = "toggle()">Nascondi/Visualizza</button> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="home">Home </a> <!-- routerLink serve per richiamare un'altra pagina senza contattare il server come href -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="dipendenti">Dipendenti</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+ <router-outlet></router-outlet>
+</div>
