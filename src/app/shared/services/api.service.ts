@@ -49,6 +49,8 @@ export class ApiService {
       { headers: Headers, params: params, withCredentials: true }).pipe(
         catchError(this.formatErrors),
         map((res: Response) => res));
+
+        //viva la ...
   }
 
   get2(path: string, params): Observable<any> {
