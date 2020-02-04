@@ -43,7 +43,7 @@ export class DipendentiService {
   }
   public deleteById(id:string):Observable<any>{
   //  this.listaSoggetti = this.listaSoggetti.filter(item => item.id != id);
-  return this.api.delete(this.path + '/' + id);
+  return this.api.delete(this.path +'/elimina'+'/' + id);
   }
   public replace(item:any):Observable<any>{
    /*  return this.listaSoggetti = this.listaSoggetti.map(i => { //i cicla in automatico ogni oggetto dell'array
