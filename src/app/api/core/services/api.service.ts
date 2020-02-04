@@ -10,7 +10,7 @@ export class ApiService {
   constructor(private http:HttpClient) { }
 
   public get(path:string):Observable<any>{ // all'interno dell'oggetto observable ci mette la chiamata al server (get restituisce un observable)
-    return this.http.get(this.host+ '/' + path);
+    return this.http.get(this.host+ '/' + path); ///test
   }
   public post(path:string, body:any):Observable<any>{
     return this.http.post(this.host+ '/' + path, body);
