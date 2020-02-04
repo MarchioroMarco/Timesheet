@@ -9,6 +9,7 @@ import { identifierModuleUrl } from '@angular/compiler';
 })
 export class DipendentiService {
   private readonly path = 'dipendenti';
+
   
   
   static getCognome(soggetto: any): any {
@@ -38,7 +39,7 @@ export class DipendentiService {
    // const obj = {...item}; //clono l'oggetto item (per un nuovo indirizzo di memoria da dare a obj)
     //obj['id'] = uuid.v4();
     //this.listaSoggetti.push(obj);
-    return this.api.post(this.path, item);
+    return this.api.post(this.path + '/inserisci', item);
   }
   public deleteById(id:string):Observable<any>{
   //  this.listaSoggetti = this.listaSoggetti.filter(item => item.id != id);

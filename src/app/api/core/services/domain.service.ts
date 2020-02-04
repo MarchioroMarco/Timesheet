@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class DomainService {
   
-  private readonly path = 'countries';
+  private readonly path = 'nazioni';
 
   constructor(private api:ApiService) { }
 
