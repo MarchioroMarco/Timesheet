@@ -41,9 +41,9 @@ export class DipendentiService {
     //this.listaSoggetti.push(obj);
     return this.api.post(this.path + '/inserisci', item);
   }
-  public deleteById(id:string):Observable<any>{
+  public deleteById(id:any):Observable<any>{
   //  this.listaSoggetti = this.listaSoggetti.filter(item => item.id != id);
-  return this.api.delete(this.path + '/' + id);
+  return this.api.delete(this.path + '/elimina/' + id);
   }
   public replace(item:any):Observable<any>{
    /*  return this.listaSoggetti = this.listaSoggetti.map(i => { //i cicla in automatico ogni oggetto dell'array
