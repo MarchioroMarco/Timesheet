@@ -18,6 +18,9 @@ export class ApiService {
   public delete(path:string):Observable<any>{
     return this.http.delete(this.host + '/'+ path);
   }
+  public put(path:string, body:any):Observable<any>{
+    return this.http.put(this.host+ '/' + path, body);
+  }
   public patch(path:string, body:any):Observable<any>{
     return this.http.patch(this.host+ '/' + path, body);
   }
