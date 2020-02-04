@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private readonly host = "http://localhost:3000";
+  private readonly host = "http://localhost:8090/api";
   constructor(private http:HttpClient) { }
 
   public get(path:string):Observable<any>{ // all'interno dell'oggetto observable ci mette la chiamata al server (get restituisce un observable)

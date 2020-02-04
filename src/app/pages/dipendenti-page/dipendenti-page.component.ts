@@ -33,7 +33,7 @@ export class DipendentiPageComponent implements OnInit {
       console.log("Risposta2",resp);
     });
     this.dipendenteService.getAll().subscribe((resp)=>{
-      this.lista = resp;
+      this.lista = resp.response;
     })
   }
   select(event: any[]){

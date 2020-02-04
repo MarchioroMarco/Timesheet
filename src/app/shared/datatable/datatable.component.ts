@@ -28,7 +28,8 @@ export class DatatableComponent implements OnInit {
   public currentIndex:boolean[] = [false];
 
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit() {
   }

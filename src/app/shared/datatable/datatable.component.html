@@ -9,8 +9,8 @@
           <tr *ngFor="let soggetto of lista; let i = index" (click)= "select(i)"
           class="cursor-point" [ngClass]="{'bg-primary text-white':currentIndex[i]}"> <!--applica la classe quando l'indice della classe è uguale a quella corrente-->
             <th scope="row">{{i+1}}</th>
-            <td >{{soggetto.name}}</td>
-            <td>{{soggetto.surname}}</td>
+            <td >{{soggetto.nome}}</td>
+            <td>{{soggetto.cognome}}</td>
             <td><button class="btn btn-primary mr-3" (click) = "edit(i)"><i class="fa fa-pencil-square-o" aria-hidden="true" ></i></button> <button class="btn btn-danger" (click)="delete(i)"><i class="fa fa-times" aria-hidden="true"></i></button></td>
           </tr>
         </tbody>

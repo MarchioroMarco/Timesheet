@@ -8,7 +8,7 @@ import { identifierModuleUrl } from '@angular/compiler';
   providedIn: 'root'
 })
 export class DipendentiService {
-  private readonly path = 'employees';
+  private readonly path = 'dipendenti';
   
   
   static getCognome(soggetto: any): any {
