@@ -11,7 +11,7 @@ export class DipendentiService {
   private readonly path = 'dipendenti';
 
   
-  
+
   static getCognome(soggetto: any): any {
     return soggetto.cognome;
   }
