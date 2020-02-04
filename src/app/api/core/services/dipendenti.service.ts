@@ -53,7 +53,8 @@ export class DipendentiService {
         return i;
       }
     }) */
-    return this.api.patch(this.path + '/' + item.id ,item );
+    /*return this.api.patch(this.path + '/modifica' + item.id ,item );*/
+    return this.api.put(this.path + '/modifica', item);
   }
   public replace2(soggetto:any){
     return this.listaSoggetti = this.listaSoggetti.map(i =>{

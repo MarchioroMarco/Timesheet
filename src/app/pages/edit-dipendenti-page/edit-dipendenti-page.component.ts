@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DipendentiService } from 'src/app/api/core/services/dipendenti.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DomainService } from 'src/app/api/core/services/domain.service';
 
 @Component({
@@ -18,15 +18,15 @@ export class EditDipendentiPageComponent implements OnInit {
   ngOnInit() {
     const id = this.routeActive.snapshot.params.id;
     this.formGroup = this.fb.group({
-      name:[''],
-      surname:[''],
-      taxCode:[''],
-      country:[''],
+      nome:['', [Validators.required]],
+      cognome:['', [Validators.required]],
+      tax_code:['', [Validators.required]],
+      /* country:[''],
       province: [''],
       city:[''],
-      address:[''],
-      phoneNumber:[''],
-      gender:[''],
+      address:[''], */
+      telefono:['', [Validators.required]],
+      sesso:[''],
       email:['']
     });
     this.domain.getCountry().subscribe((resp)=>{
