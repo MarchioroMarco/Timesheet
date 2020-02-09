@@ -2,6 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 
 import { from as observableFrom, of as observableOf, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 
 export interface Credentials {
@@ -24,12 +25,13 @@ const credentialsKey = 'token';
 @Injectable()
 export class AuthenticationService {
 
+  public token: boolean = false;
+
   private _credentials: string;
   private _features: any = null;
-
-
   
-  constructor() {
+  constructor(
+    private router: Router) {
     this._credentials = localStorage.getItem(credentialsKey);
   }
 
@@ -55,6 +57,11 @@ export class AuthenticationService {
     return observableOf(true);
   }
 
+  logOut(){
+    this.token = false;
+    this.router.navigate(['/login'], { replaceUrl: true });
+  }
+
   /**
    * Checks is the user is authenticated.
    * @return {boolean} True if the user is authenticated.
@@ -62,8 +69,16 @@ export class AuthenticationService {
 
   isAuthenticated(): boolean {
     try {
-      let check = true;
-      return (check);
+      return (this.token);
+    } catch (e) {
+      return false;
+    }
+  }
+
+  setAuthenticated(): boolean {
+    try {
+      this.token = true;
+      return (this.token);
     } catch (e) {
       return false;
     }

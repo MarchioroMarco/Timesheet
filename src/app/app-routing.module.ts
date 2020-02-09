@@ -1,17 +1,28 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DipendentiPageComponent } from './pages/dipendenti-page/dipendenti-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { DettaglioDipendentiPageComponent } from './pages/dettaglio-dipendenti-page/dettaglio-dipendenti-page.component';
 import { NewDipendentiPageComponent } from './pages/new-dipendenti-page/new-dipendenti-page.component';
 import { EditDipendentiPageComponent } from './pages/edit-dipendenti-page/edit-dipendenti-page.component';
 import { AuthenticationGuard } from './shared/guard/authentication.guard';
 
-
 const routes: Routes = [
   {
+    path: '',
+    component: LoginPageComponent,
+    canActivate: [AuthenticationGuard],
+    pathMatch: 'full',
+  },
+  {
+    path: "login",
+    component: LoginPageComponent
+  },
+  {
     path: "home",
-    component: HomePageComponent
+    component: HomePageComponent,
+    canActivate: [AuthenticationGuard]
   },
   {
     path: "dipendenti",
@@ -20,15 +31,18 @@ const routes: Routes = [
   },
   {
     path: "dipendenti/new",
-    component: NewDipendentiPageComponent
+    component: NewDipendentiPageComponent,
+    canActivate: [AuthenticationGuard]
   },
   {
     path: "dipendenti/:id",
-    component: DettaglioDipendentiPageComponent
+    component: DettaglioDipendentiPageComponent,
+    canActivate: [AuthenticationGuard]
   },
   {
     path: "dipendenti/edit/:id",
-    component: EditDipendentiPageComponent
+    component: EditDipendentiPageComponent,
+    canActivate: [AuthenticationGuard]
   }
 ];
 

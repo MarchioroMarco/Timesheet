@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { DipendentiPageComponent } from './pages/dipendenti-page/dipendenti-page.component';
 import { DettaglioDipendentiPageComponent } from './pages/dettaglio-dipendenti-page/dettaglio-dipendenti-page.component';
@@ -16,9 +17,14 @@ import { DipendentiService } from './shared/services/dipendenti.service';
 import { AuthenticationGuard } from './shared/guard/authentication.guard';
 import { AuthenticationService } from './shared/services/authentication.service';
 
+import { CardModule } from 'primeng/card';
+import { PasswordModule } from 'primeng/password';
+import { InputTextModule } from 'primeng/inputtext';
+
 @NgModule({
   declarations: [
     AppComponent,
+    LoginPageComponent,
     HomePageComponent,
     DipendentiPageComponent,
     DettaglioDipendentiPageComponent,
@@ -31,7 +37,10 @@ import { AuthenticationService } from './shared/services/authentication.service'
     SharedModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CardModule,
+    PasswordModule,
+    InputTextModule
   ],
   providers: [
     ApiService,
