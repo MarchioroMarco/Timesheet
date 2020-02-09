@@ -27,17 +27,10 @@ export class NewDipendentiPageComponent implements OnInit {
       gender:[''],
       email:['']
     });
-    this.domain.getCountry().subscribe((resp)=>{
-      this.listaPaesi = resp;
-    });
+   
   }
   conferma(){
-    this.dipendenti.add(this.formGroup.value).subscribe((resp)=>{
-      this.router.navigate(["/dipendenti"]);
-    });
-   
-    const lista = this.dipendenti.getAll();
-    console.log("Valore lista: ", lista);
+    
   }
 
 }

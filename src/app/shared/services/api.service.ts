@@ -38,15 +38,9 @@ export class ApiService {
     }
   }
 
-  get(path: string, params): Observable<any> {
+  get(path: string): Observable<any> {
 
-    const Headers = new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Accept': 'application/json'
-    });
-
-    return this.http.get(`${environment.endpoint}${path}`,
-      { headers: Headers, params: params, withCredentials: true }).pipe(
+    return this.http.get(`${environment.endpoint.api}${path}`).pipe(
         catchError(this.formatErrors),
         map((res: Response) => res));
 

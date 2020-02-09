@@ -24,47 +24,6 @@ export class DipendentiService {
   public listaSoggetti:any[] = [  ];
 
   constructor(private api:ApiService) { }
-  public getAll():Observable<any>{ //metodo che sarà poi comune a tutte le classi
-    return this.api.get(this.path);
-  }
-  public getById(id:string):Observable<any>{
-    //return this.listaSoggetti.find(i=> i.id == id); // i contiene tutta la lista soggetti (find restituisce il primo elemento che trova)
-    return this.api.get(this.path + '/' + id);
-  }
-  public getByTax(nome : string): Observable<any>{
-    return this.api.get(this.path + '?taxCode=' +nome);//se metto === non viene effettuato il casting automatico
-  }
-  public add(item:any){
-   // const obj = {...item}; //clono l'oggetto item (per un nuovo indirizzo di memoria da dare a obj)
-    //obj['id'] = uuid.v4();
-    //this.listaSoggetti.push(obj);
-    return this.api.post(this.path, item);
-  }
-  public deleteById(id:string):Observable<any>{
-  //  this.listaSoggetti = this.listaSoggetti.filter(item => item.id != id);
-  return this.api.delete(this.path + '/' + id);
-  }
-  public replace(item:any):Observable<any>{
-   /*  return this.listaSoggetti = this.listaSoggetti.map(i => { //i cicla in automatico ogni oggetto dell'array
-      if(i.id == soggetto.id){
-        return soggetto;
-      }else{
-        return i;
-      }
-    }) */
-    return this.api.patch(this.path + '/' + item.id ,item );
-  }
-  public replace2(soggetto:any){
-    return this.listaSoggetti = this.listaSoggetti.map(i =>{
-      if(i.id == soggetto.id){
-        return i;
-      }else{
-        return soggetto;
-      }
-    })
-  }
-  public  sum(val1:number , val2:number):number{
-    return val1 + val2;
-  }
+  
  
 }

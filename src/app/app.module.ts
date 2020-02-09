@@ -11,7 +11,10 @@ import { DipendentiPageComponent } from './pages/dipendenti-page/dipendenti-page
 import { DettaglioDipendentiPageComponent } from './pages/dettaglio-dipendenti-page/dettaglio-dipendenti-page.component';
 import { NewDipendentiPageComponent } from './pages/new-dipendenti-page/new-dipendenti-page.component';
 import { EditDipendentiPageComponent } from './pages/edit-dipendenti-page/edit-dipendenti-page.component';
-import { ApiService } from './api/core/services/api.service';
+import { ApiService } from './shared/services/api.service';
+import { DipendentiService } from './shared/services/dipendenti.service';
+import { AuthenticationGuard } from './shared/guard/authentication.guard';
+import { AuthenticationService } from './shared/services/authentication.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { ApiService } from './api/core/services/api.service';
     HttpClientModule
   ],
   providers: [
-    ApiService
+    ApiService,
+    DipendentiService,
+    AuthenticationGuard,
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })

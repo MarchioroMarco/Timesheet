@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  endpoint:'/api'
+  endpoint:{
+    api: 'http://localhost:8090/api',
+    nazioniController: 'localhost:8090/api/nazioni'
+  }
 };
 
 /*

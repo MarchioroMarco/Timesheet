@@ -11,7 +11,5 @@ export class DomainService {
 
   constructor(private api:ApiService) { }
 
-  public getCountry():Observable<any>{
-    return this.api.get(this.path);
-  }
+ 
 }
