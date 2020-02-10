@@ -11,6 +11,7 @@ import { DipendentiPageComponent } from './pages/dipendenti-page/dipendenti-page
 import { DettaglioDipendentiPageComponent } from './pages/dettaglio-dipendenti-page/dettaglio-dipendenti-page.component';
 import { NewDipendentiPageComponent } from './pages/new-dipendenti-page/new-dipendenti-page.component';
 import { EditDipendentiPageComponent } from './pages/edit-dipendenti-page/edit-dipendenti-page.component';
+import { LoginPageComponentComponent } from './pages/login-page-component/login-page-component.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EditDipendentiPageComponent } from './pages/edit-dipendenti-page/edit-d
     DipendentiPageComponent,
     DettaglioDipendentiPageComponent,
     NewDipendentiPageComponent,
-    EditDipendentiPageComponent
+    EditDipendentiPageComponent,
+    LoginPageComponentComponent
   ],
   imports: [
     BrowserModule,

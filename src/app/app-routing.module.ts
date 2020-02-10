@@ -5,9 +5,11 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { DettaglioDipendentiPageComponent } from './pages/dettaglio-dipendenti-page/dettaglio-dipendenti-page.component';
 import { NewDipendentiPageComponent } from './pages/new-dipendenti-page/new-dipendenti-page.component';
 import { EditDipendentiPageComponent } from './pages/edit-dipendenti-page/edit-dipendenti-page.component';
+import { LoginPageComponentComponent } from './pages/login-page-component/login-page-component.component';
 
 
 const routes: Routes = [
+  {path:"login" , component: LoginPageComponentComponent},
   {path:"home" , component: HomePageComponent},
   {path:"dipendenti" , component: DipendentiPageComponent},
   {path:"dipendenti/new", component: NewDipendentiPageComponent},
