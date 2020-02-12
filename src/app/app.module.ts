@@ -18,6 +18,7 @@ import {PasswordModule} from 'primeng/password';
 import {ButtonModule} from 'primeng/button';
 import { AuthenticationService } from './shared/services/authentication.service';
 import { AuthenticationGuard } from './shared/guard/authentication.guard';
+import { RegistrazioneComponent } from './pages/registrazione/registrazione.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AuthenticationGuard } from './shared/guard/authentication.guard';
     DettaglioDipendentiPageComponent,
     NewDipendentiPageComponent,
     EditDipendentiPageComponent,
-    LoginPageComponentComponent
+    LoginPageComponentComponent,
+    RegistrazioneComponent
   ],
   imports: [
     BrowserModule,

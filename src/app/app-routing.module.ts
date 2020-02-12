@@ -7,6 +7,7 @@ import { NewDipendentiPageComponent } from './pages/new-dipendenti-page/new-dipe
 import { EditDipendentiPageComponent } from './pages/edit-dipendenti-page/edit-dipendenti-page.component';
 import { LoginPageComponentComponent } from './pages/login-page-component/login-page-component.component';
 import { AuthenticationGuard } from './shared/guard/authentication.guard';
+import { RegistrazioneComponent } from './pages/registrazione/registrazione.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginPageComponentComponent
+  },
+  {
+    path: "registra",
+    component: RegistrazioneComponent
   },
   {
     path: "home",
