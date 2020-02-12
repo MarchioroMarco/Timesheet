@@ -15,7 +15,7 @@
                 <input type="password" required formControlName="password" pPassword />
             </div>
             <p-footer>
-               <br> <button [disabled]="!formGroup.valid" pButton type="button" label="REGISTRATI" class="mt-2" style="margin-right: .25em"></button>
+               <br> <button (click) = "conferma()" [disabled]="!formGroup.valid" pButton type="button" label="REGISTRATI" class="mt-2" style="margin-right: .25em"></button>
             </p-footer>
         </form>
         </p-card>
