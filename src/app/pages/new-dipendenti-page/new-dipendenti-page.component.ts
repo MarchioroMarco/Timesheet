@@ -40,5 +40,6 @@ export class NewDipendentiPageComponent implements OnInit {
     const lista = this.dipendenti.getAll();
     console.log("Valore lista: ", lista);
   }
-
+ 
 }
+//commento

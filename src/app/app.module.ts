@@ -11,6 +11,13 @@ import { DipendentiPageComponent } from './pages/dipendenti-page/dipendenti-page
 import { DettaglioDipendentiPageComponent } from './pages/dettaglio-dipendenti-page/dettaglio-dipendenti-page.component';
 import { NewDipendentiPageComponent } from './pages/new-dipendenti-page/new-dipendenti-page.component';
 import { EditDipendentiPageComponent } from './pages/edit-dipendenti-page/edit-dipendenti-page.component';
+import { LoginPageComponentComponent } from './pages/login-page-component/login-page-component.component';
+import {CardModule} from 'primeng/card';
+import {InputTextModule} from 'primeng/inputtext';
+import {PasswordModule} from 'primeng/password';
+import {ButtonModule} from 'primeng/button';
+import { AuthenticationService } from './shared/services/authentication.service';
+import { AuthenticationGuard } from './shared/guard/authentication.guard';
 
 @NgModule({
   declarations: [
@@ -19,7 +26,8 @@ import { EditDipendentiPageComponent } from './pages/edit-dipendenti-page/edit-d
     DipendentiPageComponent,
     DettaglioDipendentiPageComponent,
     NewDipendentiPageComponent,
-    EditDipendentiPageComponent
+    EditDipendentiPageComponent,
+    LoginPageComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -27,9 +35,16 @@ import { EditDipendentiPageComponent } from './pages/edit-dipendenti-page/edit-d
     SharedModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CardModule,
+    InputTextModule,
+    PasswordModule,
+    ButtonModule
   ],
-  providers: [],
+  providers: [
+    AuthenticationService,
+    AuthenticationGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

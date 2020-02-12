@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DataTableOptions } from './api/datatable-option';
 import { DatatableComponent } from './shared/datatable/datatable.component';
 import { DipendentiService } from './api/core/services/dipendenti.service';
+import { AuthenticationService } from './shared/services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +31,9 @@ export class AppComponent {
   public currentSelectionInput:any = 0;
   public currentSelectionOutput:any = 0;
   //public duplicato: boolean = false;
-  constructor(public dipendente: DipendentiService){ //riceve un parametro e lo rende disponibile per tutta la classe
+  constructor(
+    public authService: AuthenticationService,
+    public dipendente: DipendentiService){ //riceve un parametro e lo rende disponibile per tutta la classe
   }
 
   cambiaTitolo(){
