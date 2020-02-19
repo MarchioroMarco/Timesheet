@@ -76,9 +76,10 @@ export class AuthenticationService {
   }
 
   setAuthenticated(): boolean {
+   
     try {
-      this.token = true;
-      return (this.token);
+
+      return (this.token = true);
     } catch (e) {
       return false;
     }

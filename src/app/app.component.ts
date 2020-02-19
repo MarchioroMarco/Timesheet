@@ -3,6 +3,8 @@ import { DataTableOptions } from './api/datatable-option';
 import { DatatableComponent } from './shared/datatable/datatable.component';
 import { DipendentiService } from './api/core/services/dipendenti.service';
 import { AuthenticationService } from './shared/services/authentication.service';
+import { AuthenticationGuard } from './shared/guard/authentication.guard';
+import { RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -33,6 +35,8 @@ export class AppComponent {
   //public duplicato: boolean = false;
   constructor(
     public authService: AuthenticationService,
+    public logout : AuthenticationService,
+    public router : Router,
     public dipendente: DipendentiService){ //riceve un parametro e lo rende disponibile per tutta la classe
   }
 
@@ -67,6 +71,13 @@ export class AppComponent {
     }
     this.currentSelectionOutput=0;
   }
+
+  logOut(){
+    this.logout.logOut();
+    
+  }
+
+
 
  /*  spostaSinistra(){
     if(this.listaSoggetti2.length > 0){

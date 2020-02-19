@@ -23,16 +23,19 @@ export class LoginPageComponentComponent implements OnInit {
   }
 
   conferma(){
-    if(!this.utentiService.trova(this.formGroup.value)){
-
-      this.router.navigate(['/login']);
-    }else {
-        console.log("AOOO:" + this.formGroup.value);
-        this.tok.setAuthenticated() ;
+   
+    this.utentiService.trova(this.formGroup.value).subscribe((resp)=>{
+      console.log("RESP" + resp);
+      if(resp == true){
+        this.tok.setAuthenticated();
         this.router.navigate(['/dipendenti']);  
-    }
-       
-    }
+      }else{
+        this.router.navigate(['/login']);
+      }
+    });
+      
+    
   }
+}
 
 
