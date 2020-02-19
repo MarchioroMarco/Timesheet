@@ -28,7 +28,9 @@ export class LoginPageComponentComponent implements OnInit {
       console.log("RESP" + resp);
       if(resp == true){
         this.tok.setAuthenticated();
-        this.router.navigate(['/dipendenti']);  
+        this.router.navigate(['/dipendenti']);
+        console.log("Session: " + resp.response.jwt);
+        window.sessionStorage.setItem("token", resp.response.jwt);  
       }else{
         this.router.navigate(['/login']);
       }

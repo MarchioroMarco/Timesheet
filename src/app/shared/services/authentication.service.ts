@@ -69,6 +69,12 @@ export class AuthenticationService {
 
   isAuthenticated(): boolean {
     try {
+      if(window.sessionStorage.getItem("token")){
+        this.token = true;
+      }
+      else{
+        return false;
+      }
       return (this.token);
     } catch (e) {
       return false;
