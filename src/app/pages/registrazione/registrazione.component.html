@@ -14,6 +14,10 @@
                 <h5 class="first">Password</h5>
                 <input type="password" required formControlName="password" pPassword />
             </div>
+            <div class="mt-3">
+                <h5 class="first">CPassword</h5>
+                <input type="password" required formControlName="cpassword" pPassword />
+            </div>
             <p-footer>
                <br> <button (click) = "conferma()" [disabled]="!formGroup.valid" pButton type="button" label="REGISTRATI" class="mt-2" style="margin-right: .25em"></button>
             </p-footer>

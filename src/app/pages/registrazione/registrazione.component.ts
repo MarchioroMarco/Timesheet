@@ -17,15 +17,18 @@ export class RegistrazioneComponent implements OnInit {
   ngOnInit() {
     this.formGroup = this.fb.group({
       username:['', [Validators.required]],
-      password:['', [Validators.required]]
+      password:['', [Validators.required]],
+      cpassword:['', [Validators.required]],
     });
   }
 
   conferma(){
+    if( this.formGroup.value.password===this.formGroup.value.cpassword){
     this.utentiService.add(this.formGroup.value).subscribe((resp)=>{
       console.log("Inserito utente:" + this.formGroup.value);
       this.router.navigate(["/login"]);
     });
+  }
   }
 
 }
