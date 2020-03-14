@@ -35,15 +35,12 @@ export class EditDipendentiPageComponent implements OnInit {
     this.dipendenti.getById(id).subscribe((resp)=>{
       this.soggetto = resp;
       this.formGroup = this.fb.group({
-        name:[this.soggetto.name],
-        surname:[this.soggetto.surname],
-        taxCode:[this.soggetto.taxCode],
-        country:[this.soggetto.country],
-        province: [this.soggetto.province],
-        city:[this.soggetto.city],
-        address:[this.soggetto.address],
-        phoneNumber:[this.soggetto.phoneNumber],
-        gender:[this.soggetto.gender],
+        nome:[this.soggetto.nome],
+        cognome:[this.soggetto.cognome],
+        tax_code:[this.soggetto.tax_code],
+        indirizzo:[this.soggetto.indirizzo],
+        telefono:[this.soggetto.telefono],
+        sesso:[this.soggetto.sesso],
         email:[this.soggetto.email]
       });
     });
