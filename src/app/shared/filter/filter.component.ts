@@ -18,11 +18,11 @@ export class FilterComponent implements OnInit {
 
   ngOnInit() {
     this.formGroup = this.fb.group({
-      taxCode:['']
+      id:['']
     });
   }
 
   ricercaSogg(){
-    this.ricerca.emit(this.formGroup.value['taxCode']);
+    this.ricerca.emit(this.formGroup.value['id']);
   }
 }

@@ -3,7 +3,7 @@
           <tr>
             <th scope="col">#</th>
             <th *ngFor="let option of options.colsOptions"scope="col">{{option.label}}</th>
-          </tr>
+          </tr> 
         </thead>
         <tbody>
           <tr *ngFor="let soggetto of lista; let i = index" (click)= "select(i)"
