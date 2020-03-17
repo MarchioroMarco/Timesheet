@@ -75,7 +75,7 @@ export class AuthenticationService {
       else{
         return false;
       } */
-      return this.token = localStorage.getItem('tocken') != null;
+      return this.token = localStorage.getItem('token') != null;
     } catch (e) {
       return false;
     }
@@ -91,7 +91,7 @@ export class AuthenticationService {
     // }
     if(resp.status === 200)
     {
-      localStorage.setItem('tocken', resp.response.tocken);
+      localStorage.setItem('token', resp.response.token);
       this.router.navigate(['dipendenti'], {replaceUrl: true});
       return true;
     }

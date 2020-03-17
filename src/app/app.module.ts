@@ -19,7 +19,7 @@ import {ButtonModule} from 'primeng/button';
 import { AuthenticationService } from './shared/services/authentication.service';
 import { AuthenticationGuard } from './shared/guard/authentication.guard';
 import { RegistrazioneComponent } from './pages/registrazione/registrazione.component';
-import { TockenInterceptor } from './auth/tocken.interceptor';
+import { TokenInterceptor } from './auth/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -49,7 +49,7 @@ import { TockenInterceptor } from './auth/tocken.interceptor';
     AuthenticationGuard,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: TockenInterceptor,
+      useClass: TokenInterceptor,
       multi: true,
     },
   ],
