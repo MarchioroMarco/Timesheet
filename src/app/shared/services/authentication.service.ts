@@ -75,20 +75,27 @@ export class AuthenticationService {
       else{
         return false;
       } */
-      return (this.token);
+      return this.token = localStorage.getItem('tocken') != null;
     } catch (e) {
       return false;
     }
   }
 
-  setAuthenticated(): boolean {
+  setAuthenticated(resp: any): boolean {
    
-    try {
+    // try {
 
-      return (this.token = true);
-    } catch (e) {
-      return false;
+    //   return (this.token = true);
+    // } catch (e) {
+    //   return false;
+    // }
+    if(resp.status === 200)
+    {
+      localStorage.setItem('tocken', resp.response.tocken);
+      this.router.navigate(['dipendenti'], {replaceUrl: true});
+      return true;
     }
+    return false;
   }
 
   /**

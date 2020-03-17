@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,7 @@ import {ButtonModule} from 'primeng/button';
 import { AuthenticationService } from './shared/services/authentication.service';
 import { AuthenticationGuard } from './shared/guard/authentication.guard';
 import { RegistrazioneComponent } from './pages/registrazione/registrazione.component';
+import { TockenInterceptor } from './auth/tocken.interceptor';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,12 @@ import { RegistrazioneComponent } from './pages/registrazione/registrazione.comp
   ],
   providers: [
     AuthenticationService,
-    AuthenticationGuard
+    AuthenticationGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TockenInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent]
 })

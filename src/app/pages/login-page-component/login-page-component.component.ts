@@ -27,7 +27,7 @@ export class LoginPageComponentComponent implements OnInit {
     this.utentiService.trova(this.formGroup.value).subscribe((resp)=>{
       console.log("RESP" + resp);
       if(resp == true){
-        this.tok.setAuthenticated();
+        this.tok.setAuthenticated(resp);
         this.router.navigate(['/dipendenti']); 
       }else{
         this.router.navigate(['/login']);
