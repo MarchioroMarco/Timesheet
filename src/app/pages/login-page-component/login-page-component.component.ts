@@ -24,9 +24,9 @@ export class LoginPageComponentComponent implements OnInit {
 
   conferma(){
    
-    this.utentiService.trova(this.formGroup.value).subscribe((resp)=>{
+    this.tok.trovaTok(this.formGroup.value).subscribe((resp)=>{
       console.log("RESP" + resp);
-      if(resp == true){
+      if(resp != null){
         this.tok.setAuthenticated(resp);
         this.router.navigate(['/dipendenti']); 
       }else{

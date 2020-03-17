@@ -3,6 +3,7 @@ import { Injectable, Inject } from '@angular/core';
 import { from as observableFrom, of as observableOf, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 export interface Credentials {
@@ -25,16 +26,25 @@ const credentialsKey = 'token';
 @Injectable()
 export class AuthenticationService {
 
+  private readonly host = "http://localhost:8090/auth";
   public token: boolean = false;
 
   private _credentials: string;
   private _features: any = null;
   
   constructor(
+    private http:HttpClient,
     private router: Router) {
     this._credentials = localStorage.getItem(credentialsKey);
   }
 
+  public post(path:string, body:any):Observable<any>{
+    return this.http.post(this.host+ '/' + path, body);
+  }
+
+  public trovaTok(item:any){
+    return this.post( 'signin', item);
+  }
   /**
    * Authenticates the user.
    * @param {LoginContext} context The login parameters.
