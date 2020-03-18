@@ -69,6 +69,7 @@ export class AuthenticationService {
 
   logOut(){
     this.token = false;
+    this.isAuthenticated();
     this.router.navigate(['/login'], { replaceUrl: true });
   }
 
@@ -85,7 +86,7 @@ export class AuthenticationService {
       else{
         return false;
       } */
-      return this.token = localStorage.getItem('token') != null;
+      return this.token = sessionStorage.getItem('token') != null;
     } catch (e) {
       return false;
     }
@@ -101,7 +102,7 @@ export class AuthenticationService {
     // }
     if(resp.status === 200)
     {
-      localStorage.setItem('token', resp.response.token);
+      sessionStorage.setItem('token', resp.response.token);
       this.router.navigate(['dipendenti'], {replaceUrl: true});
       return true;
     }
@@ -126,10 +127,10 @@ export class AuthenticationService {
     this._credentials = credentials || null;
 
     if (credentials) {
-      localStorage.setItem(credentialsKey, credentials);
+      sessionStorage.setItem(credentialsKey, credentials);
     } else {
       //sessionStorage.removeItem(credentialsKey);
-      localStorage.removeItem(credentialsKey);
+      sessionStorage.removeItem(credentialsKey);
     }
   }
 
