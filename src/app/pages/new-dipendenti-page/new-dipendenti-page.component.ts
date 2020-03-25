@@ -26,6 +26,7 @@ export class NewDipendentiPageComponent implements OnInit {
       telefono:[''],
       sesso:[''],
       email:[''],
+      id:['']
     });
     this.domain.getCountry().subscribe((resp)=>{
       this.listaPaesi = resp;

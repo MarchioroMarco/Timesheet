@@ -69,7 +69,7 @@ export class AuthenticationService {
 
   logOut(){
     this.token = false;
-    //sessionStorage.removeItem(credentialsKey); //possibile soluzione
+    sessionStorage.removeItem(credentialsKey); //possibile soluzione
     this.router.navigate(['/login'], { replaceUrl: true });
   }
 
