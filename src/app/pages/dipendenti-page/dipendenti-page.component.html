@@ -2,12 +2,16 @@
 <div class="card mt-3">
 <div class="card-body">
     <div class="row">
-        <div class="col-6">
+        <div class="col-3">
             <a class="btn btn-primary" routerLink="/dipendenti/new">Nuovo</a>
         </div>
-        <div class="col-6 align-right">
+        <div class="col-6 " style="align-items: center;">
             <app-filter (ricerca)= "ricerca($event)"></app-filter>  
         </div>
+        <div class="col-3"> 
+           <font color="white"><a class="btn btn-primary" (click)="reset()" >Reset table</a></font> 
+        </div >
+
     </div> <!---->
 <div class="row mt-2">
     <div class="col-12">
