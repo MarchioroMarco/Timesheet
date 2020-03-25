@@ -32,6 +32,10 @@ export class DipendentiService {
     //return this.listaSoggetti.find(i=> i.id == id); // i contiene tutta la lista soggetti (find restituisce il primo elemento che trova)
     return this.api.get(this.path + '/id/' + id);
   }
+  public listById(id:string):Observable<any>{
+    //return this.listaSoggetti.find(i=> i.id == id); // i contiene tutta la lista soggetti (find restituisce il primo elemento che trova)
+    return this.api.get(this.path + '/idList/' + id);
+  }
   public getByName(nome : string): Observable<any>{
     return this.api.get(this.path + '?nome=' +nome);//se metto === non viene effettuato il casting automatico
   }

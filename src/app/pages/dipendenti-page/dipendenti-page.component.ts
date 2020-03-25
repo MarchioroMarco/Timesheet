@@ -58,7 +58,7 @@ export class DipendentiPageComponent implements OnInit {
   }
   ricerca(event:any){
     if(event != ""){
-      this.dipendenteService.getById(event).subscribe((resp)=>{
+      this.dipendenteService.listById(event).subscribe((resp)=>{
         this.lista = resp;
         console.log("lista:" , this.lista);
       })
