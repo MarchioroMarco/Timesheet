@@ -23,6 +23,6 @@ export class FilterComponent implements OnInit {
   }
 
   ricercaSogg(){
-    this.ricerca.emit(this.formGroup.value['id']);
+    this.ricerca.emit(this.formGroup.value.id);
   }
 }

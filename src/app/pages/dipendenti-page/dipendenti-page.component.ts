@@ -48,11 +48,6 @@ export class DipendentiPageComponent implements OnInit {
     })
     this.router.navigate(['dipendenti/edit', sogg.id]);
   }
-  reset(){
-    this.dipendenteService.getAll().subscribe((resp)=>{
-      this.lista = resp.response;
-    })
-  }
   
   delete(event:any){
      const sogg = event;
@@ -62,19 +57,20 @@ export class DipendentiPageComponent implements OnInit {
      
   }
   ricerca(event:any){
-    if(event != null){
+    if(event != ""){
       this.dipendenteService.listById(event).subscribe((resp)=>{
-        if(resp!=null){
-          this.lista = resp;
+          this.lista = resp.response;
         console.log("lista:" , this.lista);
-        }else{
+      })
+    }
+        else{
           this.dipendenteService.getAll().subscribe((resp)=>{
-            this.lista = resp;
+            this.lista = resp.response;
           })
         }
         
-      })
-    }
+      
+    
   }
 
 }
