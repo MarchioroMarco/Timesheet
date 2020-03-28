@@ -33,7 +33,7 @@ export class EditDipendentiPageComponent implements OnInit {
       this.listaPaesi = resp;
     });
     this.dipendenti.getById(id).subscribe((resp)=>{
-      this.soggetto = resp;
+      this.soggetto = resp.response;
       this.formGroup = this.fb.group({
         nome:[this.soggetto.nome],
         cognome:[this.soggetto.cognome],

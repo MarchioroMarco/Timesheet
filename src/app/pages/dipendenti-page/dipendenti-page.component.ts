@@ -44,7 +44,7 @@ export class DipendentiPageComponent implements OnInit {
   edit(event:any){
     const sogg = event;
     this.dipendenteService.replace(sogg).subscribe((resp)=>{
-      this.lista = resp;
+      this.lista = resp.response;
     })
     this.router.navigate(['dipendenti/edit', sogg.id]);
   }
